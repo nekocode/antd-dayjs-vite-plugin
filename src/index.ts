@@ -1,6 +1,6 @@
 import type { Plugin } from 'vite';
 
-const ENTRY_FILE_NAME = 'init-dayjs-webpack-plugin-entry.js';
+const ENTRY_FILE_NAME = 'init-dayjs-vite-plugin-entry.js';
 
 export interface Options {
   preset?: string;
