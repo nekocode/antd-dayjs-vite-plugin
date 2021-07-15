@@ -1,0 +1,55 @@
+{
+  "name": "antd-dayjs-vite-plugin",
+  "version": "1.0.0",
+  "description": "Day.js vite plugin for Ant Design (antd)",
+  "scripts": {
+    "build": "pika build",
+    "release": "yarn build && cd pkg && yarn publish --access public",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "day.js",
+    "webpack",
+    "moment",
+    "antd"
+  ],
+  "author": "nekocode",
+  "repository": "git@github.com:nekocode/antd-dayjs-vite-plugin.git",
+  "homepage": "https://github.com/nekocode/antd-dayjs-vite-plugin",
+  "license": "MIT",
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.9.2",
+    "@pika/plugin-ts-standard-pkg": "^0.9.2",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.3.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "~4.2.4",
+    "vite": "^2.4.2"
+  },
+  "peerDependencies": {
+    "vite": ">=2.0.0"
+  },
+  "dependencies": {
+    "antd-dayjs-webpack-plugin": "^1.0.6"
+  }
+}
