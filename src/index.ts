@@ -16,7 +16,7 @@ export default function antdDayjs(
   ) as { plugins: string[]; replaceMoment: boolean };
 
   return {
-    name: 'test',
+    name: 'antd-dayjs-vite-plugin',
 
     config(config) {
       return replaceMoment === true
