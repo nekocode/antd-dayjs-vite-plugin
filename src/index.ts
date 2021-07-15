@@ -47,7 +47,7 @@ export default function antdDayjs(
         plugins.forEach((plugin) => {
           code += `import ${plugin} from 'dayjs/plugin/${plugin}';`;
         });
-        code += `import antdPlugin from 'antd-dayjs-webpack-plugin/src/antd-plugin';`;
+        code += `import antdPlugin from 'antd-dayjs-vite-plugin/dist-src/antd-plugin';`;
 
         plugins.forEach((plugin) => {
           code += `dayjs.extend(${plugin});`;
