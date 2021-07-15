@@ -19,4 +19,4 @@ export default defineConfig({
 
 ### Configuration
 
-All the options are the same as antd-dayjs-webpack-plugin. Check its's **[README](https://github.com/ant-design/antd-dayjs-webpack-plugin#configuration-%E9%85%8D%E7%BD%AE)** for more details.
+All the options are the same as antd-dayjs-webpack-plugin. Check it's **[README](https://github.com/ant-design/antd-dayjs-webpack-plugin#configuration-%E9%85%8D%E7%BD%AE)** for more details.
