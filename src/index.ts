@@ -33,11 +33,14 @@ export default function antdDayjs(
         : config;
     },
 
-    transformIndexHtml(html) {
-      const segments = html.split('<body>');
-      return segments.join(
-        `<body><script type="module" src="/${ENTRY_FILE_NAME}"></script>`,
-      );
+    transformIndexHtml: {
+      enforce: 'pre',
+      transform: (html) => {
+        const segments = html.split('<body>');
+        return segments.join(
+          `<body><script type="module" src="/${ENTRY_FILE_NAME}"></script>`,
+        );
+      },
     },
 
     load(this, id) {
