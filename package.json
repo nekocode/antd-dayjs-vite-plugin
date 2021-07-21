@@ -6,7 +6,7 @@
     "build": "pika build",
     "release": "yarn build && cd pkg && yarn publish --access public",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:example": "yarn build && cp -r pkg/ example/node_modules/antd-dayjs-vite-plugin/ && cd example && yarn build"
   },
   "keywords": [
     "vite",
