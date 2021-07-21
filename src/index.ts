@@ -43,6 +43,12 @@ export default function antdDayjs(
       },
     },
 
+    resolveId(id) {
+      if (id.endsWith(ENTRY_FILE_NAME)) {
+        return id;
+      }
+    },
+
     load(this, id) {
       if (id.endsWith(ENTRY_FILE_NAME)) {
         let code = `import * as dayjs from 'dayjs/dayjs.min';`;
