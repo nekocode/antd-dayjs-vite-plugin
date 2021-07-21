@@ -8,5 +8,8 @@
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "Node"
-  }
+  },
+  "include": [
+    "src"
+  ],
 }
