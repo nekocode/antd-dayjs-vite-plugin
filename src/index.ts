@@ -1,4 +1,6 @@
 import type { Plugin } from 'vite';
+// @ts-ignore
+import AntdDayjsWebpackPlugin from 'antd-dayjs-webpack-plugin';
 
 const ENTRY_FILE_NAME = 'init-dayjs-vite-plugin-entry.js';
 
@@ -11,26 +13,24 @@ export interface Options {
 export default function antdDayjs(
   options: Options = { preset: 'antd' },
 ): Plugin {
-  const { plugins, replaceMoment } = new (require('antd-dayjs-webpack-plugin'))(
-    options,
-  ) as { plugins: string[]; replaceMoment: boolean };
+  const { plugins, replaceMoment } = new AntdDayjsWebpackPlugin(options) as {
+    plugins: string[];
+    replaceMoment: boolean;
+  };
 
   return {
     name: 'antd-dayjs-vite-plugin',
 
-    config(config) {
-      return replaceMoment === true
-        ? {
-            ...config,
-            resolve: {
-              ...config.resolve,
-              alias: {
-                ...config.resolve?.alias,
-                moment: 'dayjs',
-              },
+    config() {
+      if (replaceMoment === true) {
+        return {
+          resolve: {
+            alias: {
+              moment: 'dayjs',
             },
-          }
-        : config;
+          },
+        };
+      }
     },
 
     transformIndexHtml: {
