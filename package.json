@@ -1,6 +1,6 @@
 {
   "name": "antd-dayjs-vite-plugin",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Day.js vite plugin for Ant Design (antd)",
   "scripts": {
     "build": "pika build",
