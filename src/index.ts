@@ -2,7 +2,7 @@ import type { Plugin } from 'vite';
 // @ts-ignore
 import AntdDayjsWebpackPlugin from 'antd-dayjs-webpack-plugin';
 
-const ENTRY_FILE_NAME = 'init-dayjs-vite-plugin-entry.js';
+const ENTRY_FILE_NAME = 'init-dayjs-vite-plugin-entry';
 
 export interface Options {
   preset?: string;
@@ -35,22 +35,28 @@ export default function antdDayjs(
 
     transformIndexHtml: {
       enforce: 'pre',
-      transform: (html) => {
-        const segments = html.split('<body>');
-        return segments.join(
-          `<body><script type="module" src="/${ENTRY_FILE_NAME}"></script>`,
-        );
+      transform: () => {
+        return [
+          {
+            tag: 'script',
+            attrs: {
+              type: 'module',
+              src: ENTRY_FILE_NAME,
+            },
+            injectTo: 'body-prepend',
+          },
+        ];
       },
     },
 
     resolveId(id) {
       if (id.endsWith(ENTRY_FILE_NAME)) {
-        return id;
+        return ENTRY_FILE_NAME;
       }
     },
 
     load(this, id) {
-      if (id.endsWith(ENTRY_FILE_NAME)) {
+      if (id === ENTRY_FILE_NAME) {
         let code = `import * as dayjs from 'dayjs/dayjs.min';`;
 
         plugins.forEach((plugin) => {
