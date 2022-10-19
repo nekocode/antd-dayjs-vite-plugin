@@ -9,7 +9,7 @@ Install via `yarn add antd-dayjs-vite-plugin`.
 In your `vite.confg.ts`:
 
 ```ts
-import antdDayjs from 'antd-dayjs-vite-plugin';
+import { antdDayjs } from 'antd-dayjs-vite-plugin';
 
 export default defineConfig({
   plugins: [/**/, antdDayjs()],

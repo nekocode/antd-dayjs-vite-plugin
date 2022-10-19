@@ -10,9 +10,7 @@ export interface Options {
   replaceMoment?: boolean;
 }
 
-export default function antdDayjs(
-  options: Options = { preset: 'antd' },
-): Plugin {
+export const antdDayjs = (options: Options = { preset: 'antd' }): Plugin => {
   const { plugins, replaceMoment } = new AntdDayjsWebpackPlugin(options) as {
     plugins: string[];
     replaceMoment: boolean;
@@ -73,4 +71,4 @@ export default function antdDayjs(
       }
     },
   };
-}
+};
