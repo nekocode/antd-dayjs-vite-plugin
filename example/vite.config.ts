@@ -1,15 +1,8 @@
 import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
-import { antdDayjs } from '../pkg';
+import { antdDayjs } from 'antd-dayjs-vite-plugin';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh(), antdDayjs()],
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-      },
-    },
-  },
+  plugins: [react(), antdDayjs()],
 });
