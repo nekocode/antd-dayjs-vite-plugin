@@ -32,8 +32,8 @@ export const antdDayjs = (options: Options = { preset: 'antd' }): Plugin => {
     },
 
     transformIndexHtml: {
-      enforce: 'pre',
-      transform: () => {
+      order: 'pre',
+      handler: () => {
         return [
           {
             tag: 'script',
